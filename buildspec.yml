@@ -6,7 +6,7 @@ phases:
       java: corretto17
   build:
     commands:
-      - echo Build started on `date`
+      - echo Build started on `date` and $CODEBUILD_SRC_DIR
       - mvn install -DskipTests
   post_build:
     commands:
@@ -14,7 +14,7 @@ phases:
       - mvn package
 artifacts:
   files:
-    - $CODEBUILD_SRC_DIR/target/*.jar
+    - target/*.jar
     - scripts/*.sh
     - appspec.yml
   discard-paths: yes
