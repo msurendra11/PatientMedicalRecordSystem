@@ -14,11 +14,7 @@ phases:
       - mvn package
 artifacts:
   files:
-    - echo artifact directory $CODEBUILD_SRC_DIR
-    - $CODEBUILD_SRC_DIR/target/patient-registration-0.0.1.jar
-    - '**/*'
-    - target/*.jar
-    - root/.m2/repository/com/example/patient-registration/0.0.1/*.jar
+    - $CODEBUILD_SRC_DIR/target/*.jar
     - scripts/*.sh
     - appspec.yml
   discard-paths: yes
