@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 
 files:
-  - source: /
+  - source: ./patient-registration-0.0.1.jar
     destination: /home/ec2-user/server
 
 permissions:
