@@ -12,9 +12,11 @@ phases:
     commands:
       - echo Build completed on `date`
       - mvn package
+      - echo copying jar file from .$CODEBUILD_SRC_DIR/target/patient-registration-0.0.1.jar to /home/ec2-user/server
+      - cp .$CODEBUILD_SRC_DIR/target/patient-registration-0.0.1.jar ./home/ec2-user/server
 artifacts:
   files:
-    - target/*.jar
     - scripts/*.sh
+    - target/*.jar
     - appspec.yml
   discard-paths: yes
