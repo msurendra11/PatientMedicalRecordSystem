@@ -15,6 +15,7 @@ phases:
 artifacts:
   files:
     - target/*.jar
+    - root/.m2/repository/com/example/patient-registration/0.0.1/*.jar
     - scripts/*.sh
     - appspec.yml
   discard-paths: yes
