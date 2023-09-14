@@ -1,8 +1,5 @@
 version: 0.2
-
-env:
-  variables:
-    DOT: "."    
+   
 phases:
   install:
     runtime-versions:
@@ -15,11 +12,9 @@ phases:
     commands:
       - echo Build completed on `date`
       - mvn package
-      - echo copying jar file from $DOT$CODEBUILD_SRC_DIR/target/patient-registration-0.0.1.jar to /home/ec2-user/server
-      - cp $DOT$CODEBUILD_SRC_DIR/target/patient-registration-0.0.1.jar ./home/ec2-user/server
 artifacts:
   files:
-    - scripts/*.sh
     - target/*.jar
+    - scripts/*.sh
     - appspec.yml
   discard-paths: yes
