@@ -1,5 +1,9 @@
 version: 0.2
 
+env:
+  variables:
+    TARGET_PATH: "."+$CODEBUILD_SRC_DIR
+    
 phases:
   install:
     runtime-versions:
@@ -12,8 +16,8 @@ phases:
     commands:
       - echo Build completed on `date`
       - mvn package
-      - echo copying jar file from . $CODEBUILD_SRC_DIR/target/patient-registration-0.0.1.jar to /home/ec2-user/server
-      - cp . $CODEBUILD_SRC_DIR/target/patient-registration-0.0.1.jar ./home/ec2-user/server
+      - echo copying jar file from $TARGET_PATH/target/patient-registration-0.0.1.jar to /home/ec2-user/server
+      - cp $TARGET_PATH/target/patient-registration-0.0.1.jar ./home/ec2-user/server
 artifacts:
   files:
     - scripts/*.sh
