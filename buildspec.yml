@@ -15,4 +15,8 @@ artifacts:
     - target/*.jar
     - scripts/*.sh
     - appspec.yml
+  secondary-artifacts:
+    artifact1:
+       files:
+        -'**.*'
   discard-paths: yes
