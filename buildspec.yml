@@ -1,17 +1,15 @@
 version: 0.2
-   
+
 phases:
   install:
     runtime-versions:
       java: corretto17
   build:
     commands:
-      - echo Build started on `date` and $CODEBUILD_SRC_DIR
-      - mvn install -DskipTests
+      - mvn clean install
   post_build:
     commands:
-      - echo Build completed on `date`
-      - mvn package
+      - echo Build completed
 artifacts:
   files:
     - target/*.jar
