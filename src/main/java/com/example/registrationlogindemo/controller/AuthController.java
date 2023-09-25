@@ -57,7 +57,7 @@ public class AuthController {
         return "redirect:/register?success";
     }
 
-    @GetMapping("/users")
+    @GetMapping("/report")
     public String listRegisteredUsers(Model model){
         List<UserDto> users = userService.findAllUsers();
         model.addAttribute("users", users);
